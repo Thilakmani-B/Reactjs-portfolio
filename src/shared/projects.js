@@ -4,7 +4,7 @@ export const PROJECTS =
         id:0,
         image:'assets/images/hc.png',
         name:'Handcricket',
-        category:'web app',
+        category:'web game app',
         label:'Game',
         duration:'1 Month',
         developer:'Thilakmani',
