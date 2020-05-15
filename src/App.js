@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import Project from './components/ProjectComponent.js';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import './App.css';
 
@@ -11,6 +11,7 @@ function App() {
           <NavbarBrand href="#">Thilakmani</NavbarBrand>
         </div>
       </Navbar>
+      <Project />
     </div>
   );
 }
