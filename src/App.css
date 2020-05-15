@@ -1,0 +1,10 @@
+.App{
+  background-color: beige;
+  font-family: monospace;
+}
+h1{
+  font-family: monospace;
+  font-weight: bold;
+  text-align:center;
+  margin:20px;
+}
