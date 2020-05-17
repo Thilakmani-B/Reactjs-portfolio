@@ -7,6 +7,13 @@ class Project extends Component{
         this.state = {
             selecteProject:null
         };
+    {/*console.log("constructor life cycle method called") */}
+
+    }
+    componentDidMount()
+    {
+            console.log("componentdidmount() life cycle method called");
+
     }
     onProjectSelected(project){
         this.setState({
@@ -20,7 +27,8 @@ return(
 <h3>
     Developer:{project.developer}<br />
     Duration:{project.duration}<br />
-    Category:{project.category}
+    Category:{project.category}<br />
+    <a href={project.link} target="_blank">View</a>
 </h3>
 );
   }
@@ -52,6 +60,7 @@ return(
 
     return(
 <div className="container">
+    <h1>Projects I have done</h1>
 <div className="row">
     <Media list>
         {projectList}

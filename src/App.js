@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import Project from './components/ProjectComponent';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import './App.css';
+import Home from './components/HomeComponent';
 import { PROJECTS } from './shared/projects.js';
+import Header from './components/HeaderComponent';
+import Footer from './components/FooterComponent';
+import Contact from './components/ContactComponent';
+import { BrowserRouter } from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 
 class App extends Component {
   constructor(props){
@@ -14,16 +20,25 @@ this.state = {
   
   render()
   {
+    const HomePage = () =>
+    {
+      return(
+<Home />
+      );
+    }
   return (
+    <BrowserRouter>
     <div className="App">
-      <Navbar dark color="secondary">
-        <div className="container">
-          <NavbarBrand href="#">Thilakmani</NavbarBrand>
-        </div>
-      </Navbar>
-      <h1>Projects I have made</h1>
-      <Project projects={this.state.projects}/>
+      <Header />
+  <Switch>
+    <Route path="/home" component={HomePage} />
+    <Route exact  path="/project" component={() => <Project projects={this.state.projects} />} />
+    <Route exact path="/contact" component={Contact}/>
+    <Redirect to="/home" />
+  </Switch>
+      <Footer />
     </div>
+    </BrowserRouter>
   );
 }
 }
