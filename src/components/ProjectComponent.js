@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Media} from 'reactstrap';
+import {Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import {Link} from 'react-router-dom';
 {/*Only class constructor can have local state */}
 class Project extends Component{
     constructor(props){
@@ -60,12 +62,17 @@ return(
 
     return(
 <div className="container">
-    <h1>Projects I have done</h1>
 <div className="row">
-    <Media list>
+<Breadcrumb>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Projects</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">    <Media list>
         {projectList}
     </Media>
 </div>
+</div>
+
 <div className="container row" id="description">
 {this.renderProject(this.state.selectedProject)}
 </div>

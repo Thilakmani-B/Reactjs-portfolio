@@ -52,7 +52,9 @@ address{
   margin:0px;
   color:#0f0f0f;
 }
-
+.posts:hover{
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
 @keyframes animation1{
   from{
     rotate:0deg;
@@ -73,4 +75,10 @@ address{
 }
 .navbar-dark{
   background-color: blueviolet;
+}
+@media(min-width:768px)
+{
+  .col{
+    width:100%
+  }
 }
